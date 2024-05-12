@@ -39,5 +39,7 @@ def get_task(id):
 
   return jsonify({"message":"Não foi possível encontrar a atividade"}),404
 
+
+
 if __name__ == "__main__":
   app.run(debug=True)
