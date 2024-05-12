@@ -1,15 +1,16 @@
-from flask import  Flask
+from flask import  Flask, request
 
 app = Flask(__name__)
 
 
-@app.route("/")
-def hello_world():
-    return "Hello world"
+tasks = []
 
-@app.route("/about")
-def about():
-    return "Página sobre"
+@app.route('/tasks',methods=['Post'])
+def create_task():
+    data = request.get_json()
+    print(data)
+    return 'Test'
 
-if __name__ =="__main__":
-    app.run(debug=True)
+
+if __name__ == "__main__":
+  app.run(debug=True)
